@@ -1,1 +1,5 @@
-# UltraProgramingTeam
+# PROYECTO ULTRA PROGRAMING TEAM
+
+Integrantes y sus Roles:
+
+* Critian Camilo Peña Peña - Scrum Master
