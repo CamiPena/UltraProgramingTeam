@@ -2,4 +2,4 @@
 
 Integrantes y sus Roles:
 
-* Critian Camilo Peña Peña - Scrum Master
+* Critian Camilo Peña Peña - Scrum Master - Desarrollador - Analista - Product Owner - Administrador de Servicio
