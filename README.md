@@ -5,4 +5,4 @@ Integrantes y sus Roles:
 * Cristian Camilo Peña Peña - Scrum Master
 * Yesid Gutierrez Curbelo - Administrador del Servidor
 * Jhonatan de Jesus Diaz Angel - Product Owner
-* Esteban Cortes - Desarrollador
+* Hector Esteban Cortes Cruz - Desarrollador
