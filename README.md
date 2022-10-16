@@ -2,4 +2,4 @@
 
 Integrantes y sus Roles:
 
-* Cristian Camilo Peña Peña - Scrum Master - Desarrollador - Analista - Product Owner - Administrador de Servicio
+* Cristian Camilo Peña Peña - Scrum Master
