@@ -18,7 +18,6 @@ class _RegisterPageState extends State<RegisterPage> {
   final _password = TextEditingController();
   final _repPassword = TextEditingController();
 
-  //String _data = 'Información: ';
 
   void _showMsg(String msg){
     final scaffold = ScaffoldMessenger.of(context);
@@ -38,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
   void _onRegisterButtonClicked() {
     setState(() {
       if (_password.text == _repPassword.text) {
-        var user = User(_name, _lastName, _email, _password);
+        var user = User(_name.text, _lastName.text, _email.text, _password.text);
         saveUser(user);
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginPage()));
       } else {

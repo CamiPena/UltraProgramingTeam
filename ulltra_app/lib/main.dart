@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ulltra_app/pages/home_page.dart';
 import 'package:ulltra_app/pages/login_page.dart';
 import 'package:ulltra_app/pages/register_page.dart';
 import 'package:ulltra_app/pages/splash_page.dart';
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Ultra App Mis Sitios de Interés',
       theme: ThemeData(
         primarySwatch: Colors.red,

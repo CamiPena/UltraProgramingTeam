@@ -8,17 +8,17 @@ class User{
 
   User.Empty();
 
-  User.fromJson(Map<String, dynamic> json):
-        _name = json['name'],
+  User.fromJson(Map<String, dynamic> json)
+      : _name = json['name'],
         _lastName = json['lastName'],
-        _password = json['password'],
-        _email = json['email'];
+        _email = json['email'],
+        _password = json['password'];
 
-  Map<String, dynamic> ToJson() => {
+  Map<String, dynamic> toJson() => {
     'name' : _name,
     'lastName' : _lastName,
-    'password' : _password,
     'email' : _email,
+    'password' : _password,
   };
 
   get name => _name;

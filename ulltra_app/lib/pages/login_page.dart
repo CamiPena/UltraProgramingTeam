@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ulltra_app/models/user.dart';
@@ -25,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
     super.initState();
   }
 
-  _getUser () async{
+  _getUser() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     Map<String, dynamic> userMap = jsonDecode(prefs.getString("user")!);
     userLoad = User.fromJson(userMap);
@@ -87,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      _validateUser;
+                      _validateUser();
                     }, child: const Text('Iniciar Sesión')),
                 TextButton(
                   style: TextButton.styleFrom(
