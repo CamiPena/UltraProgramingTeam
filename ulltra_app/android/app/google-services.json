@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "648114808831",
+    "project_id": "ultra-app-2b103",
+    "storage_bucket": "ultra-app-2b103.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648114808831:android:fef9ebf870dbff2f7fe9ca",
+        "android_client_info": {
+          "package_name": "com.example.ulltra_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "648114808831-lvidghnjohgl8neca7m3qcjsa2sgru5s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhMKvPVqBvwgGmzFbsz4yrCFHY0LFvD0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "648114808831-lvidghnjohgl8neca7m3qcjsa2sgru5s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
