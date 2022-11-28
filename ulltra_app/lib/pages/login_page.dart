@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ulltra_app/models/user.dart';
-import 'package:ulltra_app/pages/home_page.dart';
 import 'package:ulltra_app/pages/list_page.dart';
+import 'package:ulltra_app/pages/otros_sitios.dart';
 import 'package:ulltra_app/pages/register_page.dart';
 import 'package:ulltra_app/repository/firebase_api.dart';
 
@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
         msg = "Sin conexión a la red";
       } else
       _showMsg("Bienvenido");
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ListPage()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>  otrosSitios()));
     }
   }
 

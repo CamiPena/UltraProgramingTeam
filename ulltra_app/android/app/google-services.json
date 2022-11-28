@@ -29,6 +29,13 @@
             {
               "client_id": "648114808831-lvidghnjohgl8neca7m3qcjsa2sgru5s.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "648114808831-5c0jk6am9dpjicsol0a6l5oe5uc5eenp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ulltraApp"
+              }
             }
           ]
         }

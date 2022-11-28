@@ -21,6 +21,7 @@ class _NewSitePageState extends State<NewSitePage> {
   String imagePath = "";
   final _siteName = TextEditingController();
   final _description = TextEditingController();
+  final _foto = TextEditingController();
 
   void _showMsg(String msg) {
     final scaffold = ScaffoldMessenger.of(context);
@@ -40,7 +41,7 @@ class _NewSitePageState extends State<NewSitePage> {
   }
 
   void _saveSite() {
-    var sites = Sites("", _siteName.text, _description.text, _rating);
+    var sites = Sites("", _siteName.text, _description.text, _rating,_foto);
     _createSites(sites);
   }
 

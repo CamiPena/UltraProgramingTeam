@@ -2,10 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ulltra_app/pages/home_page.dart';
-import 'package:ulltra_app/pages/home_page2.dart';
-import 'package:ulltra_app/pages/home_page5.dart';
-import 'package:ulltra_app/pages/login_page.dart';
+import 'package:ulltra_app/models/otros_sitios.dart';
+import 'package:ulltra_app/pages/detalle_sitios.dart';
+import 'package:ulltra_app/pages/otros_sitios.dart';
+import 'package:ulltra_app/pages/menu_page.dart';
 import 'package:ulltra_app/pages/new_site_page.dart';
 
 class ListPage extends StatefulWidget {
@@ -15,36 +15,30 @@ class ListPage extends StatefulWidget {
   State<ListPage> createState() => _ListPageState();
 }
 
-enum Menu { logOut }
-
 class _ListPageState extends State<ListPage> {
+
+  List sitios=[];
+  List idSitio=[];
+
+  Future getSitio()async{
+    QuerySnapshot sitio = await FirebaseFirestore.instance.collection("sites").get();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Mis sitios de Interés ;) ..."),
         actions: [
-          PopupMenuButton(
-            onSelected: (Menu item) {
-              setState(() {
-                if (item == Menu.logOut) {
-                  FirebaseAuth.instance.signOut();
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginPage()));
-                }
-              });
-            },
-            itemBuilder: (BuildContext context) => <PopupMenuEntry<Menu>>[
-              const PopupMenuItem(
-                value: Menu.logOut,
-                child: Text('Cerrar Sesión'),
-              ),
-            ],
-          ),
+          IconButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder:  (context)=>otrosSitios()));
+              },
+              icon: const Icon(Icons.search, size: 30, color: Colors.white))
         ],
       ),
+      drawer: MenuPage(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
         child: StreamBuilder<QuerySnapshot>(
@@ -62,10 +56,11 @@ class _ListPageState extends State<ListPage> {
                 return Card(
                   child: ListTile(
                     onTap: () {
+                      datosSitio sitioNew= datosSitio(sites.id, sites["nombre"], sites["foto"], sites["ciudad"], sites["departamento"], sites["temperatura"], sites["descripcion"], sites["ubicacion"]);
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const HomePage()));
+                              builder: (context) => DetalleSitio(sitioNew)));
                     },
                     title: Text(sites['siteName']),
                     subtitle: Text(sites['description']),
@@ -86,6 +81,41 @@ class _ListPageState extends State<ListPage> {
         },
         tooltip: 'Nuevo Sitio',
         child: const Icon(Icons.add),
+      ),
+      bottomNavigationBar: const menuInferior(),
+    );
+  }
+}
+class miCardImage extends StatelessWidget {
+
+  final String url;
+  final String texto;
+
+  miCardImage(this.url, this.texto);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      margin: const EdgeInsets.all(5),
+      elevation: 20,
+      color: Colors.black,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: Column(
+          children: [
+            Image.network(url,width: MediaQuery.of(context).size.width,height: 250,),
+            Container(
+              alignment: Alignment.center,
+              padding: const EdgeInsets.all(5),
+              color: Colors.white,
+              child: Text(texto,
+                  style: const TextStyle(
+                      fontSize: 20,
+                      color: Colors.black)),
+            )
+          ],
+        ),
       ),
     );
   }

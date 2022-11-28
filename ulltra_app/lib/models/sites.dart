@@ -3,20 +3,25 @@ class Sites {
   var _siteName;
   var _description;
   var _rating;
+  var _foto;
 
-  Sites(this._id, this._siteName, this._description, this._rating);
+
+  Sites(this._id, this._siteName, this._description, this._rating, this._foto);
 
   Sites.fromJson(Map<String, dynamic> json)
       : _id = json['id'],
         _siteName = json['siteName'],
         _description = json['description'],
-        _rating = json['rating'];
+        _rating = json['rating'],
+        _foto = json['foto'];
 
   Map<String, dynamic> toJson() => {
-  'id' : _id,
-  'siteName' : _siteName,
-  'description' : _description,
-  'rating' : _rating
+    'id' : _id,
+    'siteName' : _siteName,
+    'description' : _description,
+    'rating' : _rating,
+    'foto' : _foto
+
   };
 
   get rating => _rating;
@@ -41,5 +46,11 @@ class Sites {
 
   set id(value) {
     _id = value;
+  }
+
+  get foto => _foto;
+
+  set foto(value) {
+    _foto = value;
   }
 }

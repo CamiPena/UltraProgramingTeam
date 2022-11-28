@@ -1,22 +1,20 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:ulltra_app/firebase_options.dart';
-import 'package:ulltra_app/pages/home_page.dart';
-import 'package:ulltra_app/pages/home_page2.dart';
-import 'package:ulltra_app/pages/home_page3.dart';
-import 'package:ulltra_app/pages/home_page4.dart';
-import 'package:ulltra_app/pages/home_page5.dart';
-import 'package:ulltra_app/pages/list_page.dart';
-import 'package:ulltra_app/pages/login_page.dart';
-import 'package:ulltra_app/pages/register_page.dart';
+import 'package:ulltra_app/models/sites_local.dart';
 import 'package:ulltra_app/pages/splash_page.dart';
-import 'firebase_options.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform
   );
+  await Hive.initFlutter();
+  Hive.registerAdapter(SitesLocalAdapter());
+  await Hive.openBox<SitesLocal>('favoritos');
   runApp(const MyApp());
 }
 
