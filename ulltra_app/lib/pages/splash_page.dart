@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ulltra_app/pages/list_page.dart';
 import 'package:ulltra_app/pages/login_page.dart';
+import 'package:ulltra_app/pages/otros_sitios.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class _SplashPageState extends State<SplashPage> {
             context, MaterialPageRoute(builder: (context) => const LoginPage()));
       }else {
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => const ListPage()));
+            context, MaterialPageRoute(builder: (context) => const otrosSitios()));
       }
     });
   }
